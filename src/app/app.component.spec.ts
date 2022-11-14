@@ -1,9 +1,13 @@
 import { TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule
+      ],
       declarations: [
         AppComponent
       ],
@@ -16,16 +20,24 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'proyectoDespliegue'`, () => {
+  it(`should have as title 'frontend'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('proyectoDespliegue');
+    expect(app.title).toEqual('frontend');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('proyectoDespliegue app is running!');
+  it('suma 2+2 = 4', () => {
+    const suma = 2+2;
+    expect(suma).toBe(4);
   });
+
+  it('suma 6+6 = 12', () => {
+    const suma = 2+3;
+    expect(suma).toBe(12);
+  });
+  it('suma 7+3 = 10', () => {
+    const suma = 2+3;
+    expect(suma).toBe(10);
+  });
+
 });
